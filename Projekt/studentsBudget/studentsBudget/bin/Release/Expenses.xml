@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Expenses>
+  <item type="expense">
+    <name>Buty</name>
+    <value>120</value>
+    <date>24.03</date>
+    <category>Inne</category>
+  </item>
+</Expenses>

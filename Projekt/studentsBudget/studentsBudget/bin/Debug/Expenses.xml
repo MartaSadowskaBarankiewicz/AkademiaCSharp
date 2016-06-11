@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Expenses>
+  <item type="expense">
+    <name>Testowy2.2</name>
+    <value>1000</value>
+    <date>12.01</date>
+    <category>Inne</category>
+  </item>
+  <item type="expense">
+    <name>Testowy2</name>
+    <value>20</value>
+    <date>24.02</date>
+    <category>Inne</category>
+  </item>
+  <item type="expense">
+    <name>Testowy2.1</name>
+    <value>20</value>
+    <date>29.02</date>
+    <category>Inne</category>
+  </item>
+</Expenses>

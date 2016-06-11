@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Credits>
+  <item category="Pożyczka" type="credit">
+    <name>Testowy3</name>
+    <value>2</value>
+    <date>12.05</date>
+    <payDate>13.06</payDate>
+    <lender>Ala</lender>
+  </item>
+  <item category="Pożyczka" type="credit">
+    <name>cos</name>
+    <value>120</value>
+    <date>22.05</date>
+    <payDate>24.07</payDate>
+    <lender>Ania</lender>
+  </item>
+</Credits>

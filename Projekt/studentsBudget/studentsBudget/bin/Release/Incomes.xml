@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Incomes>
+  <item type="income">
+    <name>Pensja Marzec</name>
+    <value>2000</value>
+    <date>10.04.2016</date>
+    <category>Pensja</category>
+  </item>
+</Incomes>

@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Incomes>
+  <item type="income">
+    <name>cokolwiek</name>
+    <value>100</value>
+    <date>12.05</date>
+    <category>Inne</category>
+  </item>
+  <item type="income">
+    <name>ababa</name>
+    <value>2000</value>
+    <date>12.05</date>
+    <category>Inne</category>
+  </item>
+  <item type="income">
+    <name>Testowy</name>
+    <value>100</value>
+    <date>22.06</date>
+    <category>Stypendium</category>
+  </item>
+</Incomes>

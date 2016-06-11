@@ -1,0 +1,82 @@
+﻿<Window x:Class="studentsBudget.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:studentsBudget"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="8*"></ColumnDefinition>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="5*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Label Grid.Column="0" Grid.Row="0" Margin="20" Content="SALDO: " HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="24" FontWeight="Bold" Foreground="Black" ></Label>
+        <Label Name="BalanceValueLabel"  Grid.Column="1" Grid.Row="0" Margin="20" Content="..." HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="24" FontWeight="Bold" Loaded="Balance_OnLoaded"></Label>
+
+        <WrapPanel Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center" >
+            <Button Name="ShowIncomsButton" Content="Pokaż wpływy"  Height="30" Width="120" VerticalAlignment="Top" Margin="10" Click="ShowIncomsButton_OnClick" /> 
+            <Button Name="ShowExpensesButton" Content="Pokaż wydatki"  Height="30" Width="120" VerticalAlignment="Top" Margin="10" Click="ShowExpensesButton_OnClick" />
+            <Button Name="ShowCreditsButton" Content="Pokaż pożyczki"  Height="30" Width="120" VerticalAlignment="Top" Margin="10" Click="ShowCreditsButton_OnClick"/>
+            <Button Name="ShowAllButton" Content="Pokaż wszystko"  Height="30" Width="120" VerticalAlignment="Top" Margin="10" Click="ShowAllButton_OnClick"/>
+        </WrapPanel>
+
+        <ListView Name="SummaryView" Grid.Column="0" Grid.Row="2" Margin="20" FontSize="12">
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="HorizontalContentAlignment" Value="Center" />
+                </Style>
+            </ListView.ItemContainerStyle>
+            <ListView.View>
+                <GridView>
+                    <GridView.ColumnHeaderContainerStyle>
+                        <Style TargetType="{x:Type GridViewColumnHeader}">
+                            <Setter Property="IsHitTestVisible" Value="False"/>
+                        </Style>
+                    </GridView.ColumnHeaderContainerStyle>
+                    <GridViewColumn Header="Nazwa" Width="100" DisplayMemberBinding="{Binding Name}"/>
+                    <GridViewColumn Header="Kwota" Width="100" DisplayMemberBinding="{Binding Value}" />
+                    <GridViewColumn Header="Data" Width="100" DisplayMemberBinding="{Binding Date}"/>
+                    <GridViewColumn Header="Kategoria" Width="100" DisplayMemberBinding="{Binding Category}"/>
+                    <GridViewColumn Header="Data spłaty" Width="100">
+                        <GridViewColumn.DisplayMemberBinding>
+                            <PriorityBinding>
+                                <Binding Path="payData"/>
+                                <Binding Path="----"/>
+                            </PriorityBinding>
+                        </GridViewColumn.DisplayMemberBinding>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Osoba" Width="80">
+                        <GridViewColumn.DisplayMemberBinding>
+                            <PriorityBinding>
+                                <Binding Path="Lender"/>
+                                <Binding Path="----"/>
+                            </PriorityBinding>
+                        </GridViewColumn.DisplayMemberBinding>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+            
+            <ListView.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Usuń" Click="RemoveItem_OnClick"/>
+                </ContextMenu>
+            </ListView.ContextMenu>
+        </ListView>
+        
+        <StackPanel Grid.Column="1" Grid.Row="2">
+            <Button Name="AddIncomButton" Content="Dodaj wpływ"  Height="30" Width="120" VerticalAlignment="Top" Margin="10" Click="AddIncomeButton_OnClick"/>
+            <Button Name="AddExpenseButton" Content="Dodaj wydatek"  Height="30" Width="120" VerticalAlignment="Top" Margin="10" Click="AddExpenseButton_OnClick"/>
+            <Button Name="AddCreditButton" Content="Dodaj pożyczkę"  Height="30" Width="120" VerticalAlignment="Top" Margin="10" Click="AddCreditButton_OnClick"/>
+        </StackPanel>
+
+
+    </Grid>
+</Window>
+
