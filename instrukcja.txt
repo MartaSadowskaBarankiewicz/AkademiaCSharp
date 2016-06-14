@@ -1,0 +1,1 @@
+Program robi zstawienie wydatków i przychodów, przedstaia ich listê ³¹czn¹ lub dla ka¿dego typu osobn¹ oraz liczy saldo po uwzglêdnieniu wszystkich operacji. Wydatki, przychody oraz po¿ycki mo¿na dodawaæ oraz usuwaæ (menu kontekstowe). Listy s¹ sortowane po dacie transakcji.
